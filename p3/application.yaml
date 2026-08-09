@@ -4,8 +4,6 @@ kind: Application
 metadata:
   name: iot-p3
   namespace: argocd
-data:
-  timeout.reconcile: 30s
 spec:
   project: default
   source:

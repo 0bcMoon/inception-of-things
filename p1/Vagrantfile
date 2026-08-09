@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
     ctrl.vm.provision "shell", path: "scripts/server.sh", env: {"K3S_TOKEN" => K3S_CLUSTER_TOKEN}
 
     ctrl.vm.provider "libvirt" do |lv|
+      lv.default_prefix = ""
       lv.memory = "1024"
       lv.cpus = 1
     end
@@ -29,6 +30,7 @@ Vagrant.configure("2") do |config|
     ctrl.vm.provision "shell", path: "scripts/worker.sh", env: {"K3S_TOKEN" => K3S_CLUSTER_TOKEN}
 
     ctrl.vm.provider "libvirt" do |lv|
+      lv.default_prefix = ""
       lv.memory = "1024"
       lv.cpus = 1
     end
